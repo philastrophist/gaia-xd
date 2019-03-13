@@ -1,32 +1,36 @@
 import numpy as np
-from bayesian.extreme_deconvolution.complete import CompleteXDGMMBase, CompleteXDGMMCompiled
-from bayesian.extreme_deconvolution.visual import plot_ellipse
+from candid.complete import CompleteXDGMMCompiled
+from candid.visual import plot_ellipse
+from candid.backend import Backend
+from candid.visual import eigsorted
 
 
-def fit(ncomponents, colours, mags, steps=1000):
-    X = np.stack([colours, mags]).T
-    XDGMM = CompleteXDGMMCompiled
-    model = XDGMM(ncomponents, 2, labels=['colour', 'mag'], verbose=True)
-    model.initialise(X, 1000)
-    model.fit(X, max_iter=steps, tol=None, reinitialise=False)
-    return model
+
 
 
 def conditional_2d_line(model, xlabel, xs):
     models = [model.condition(**{xlabel: x}) for x in xs]
     _ys = [np.sum(m.mu[:, 0] * m.alpha) for m in models]
-    return _ys
+    return np.asarray(_ys)
 
 
-def plot_model(model, ax):
+def plot_model(model, ax, color='k'):
     for component in model.components:
-        plot_ellipse(ax, component.mu[0], component.V[0], 'k', alpha=0.3)
+        plot_ellipse(ax, component.mu[0], component.V[0], color, alpha=0.3)
 
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
     from statsmodels.stats.moment_helpers import corr2cov
 
+
+    def fit(ncomponents, colours, mags, steps=1000):
+        X = np.stack([colours, mags]).T
+        XDGMM = CompleteXDGMMCompiled
+        model = XDGMM(ncomponents, 2, labels=['colour', 'mag'], verbose=True)
+        model.initialise(X, 1000)
+        model.fit(X, max_iter=steps, tol=None, reinitialise=False)
+        return model
 
     corra = np.ones((2, 2))
     corra[1, 0] = corra[1, 0] = 0.7
