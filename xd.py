@@ -1,11 +1,29 @@
 import numpy as np
-from candid.complete import CompleteXDGMMCompiled
-from candid.visual import plot_ellipse
-from candid.backend import Backend
-from candid.visual import eigsorted
+from candid.complete import CompleteXDGMMCompiled, Backend
+from matplotlib.patches import Ellipse
 
 
+def eigsorted(cov):
+    vals, vecs = np.linalg.eigh(cov)
+    order = vals.argsort()[::-1]
+    return vals[order], vecs[:,order]
 
+def orientation_from_covariance(cov, sigma):
+    vals, vecs = eigsorted(cov)
+    theta = np.degrees(np.arctan2(*vecs[:,0][::-1]))
+    w, h = 2 * sigma * np.sqrt(vals)
+    return w, h, theta
+
+def plot_ellipse(ax, mu, covariance, color, linewidth=2, alpha=0.5):
+    x, y, angle = orientation_from_covariance(covariance, 2)
+    e = Ellipse(mu, x, y, angle=angle)
+    e.set_alpha(alpha)
+    e.set_linewidth(linewidth)
+    e.set_edgecolor(color)
+    e.set_facecolor(color)
+    e.set_fill(False)
+    ax.add_artist(e)
+    return e
 
 
 def conditional_2d_line(model, xlabel, xs):

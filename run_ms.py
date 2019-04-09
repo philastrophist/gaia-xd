@@ -10,8 +10,8 @@ from xd import conditional_2d_line, CompleteXDGMMCompiled, plot_model, Backend, 
 
 def exclude_components(model, components):
     """return a model without white dwarfs"""
-    new = model.copy()
     accepted = [c for i, c in enumerate(model.components) if i not in components]
+    new = CompleteXDGMMCompiled(len(accepted), model.ndim, model.labels, model.verbose, model.prior)
     for i, component in enumerate(accepted):
         new.mu[i, :] = component.mu[0]
         new.V[i, :] = component.V[0]
@@ -55,7 +55,8 @@ def distance_to_line(line_X, data_X, batch_size=10000):
     :return:
     """
     # nbatches = (len(data_X) // batch_size) +
-    dists = [_distance_to_line(line_X, data_X[start:start + batch_size]) for start in trange(0, len(data_X), batch_size)]
+    dists = [_distance_to_line(line_X, data_X[start:start + batch_size]) for start in trange(0, len(data_X), batch_size,
+                                                                                             desc='calc distances')]
     return np.concatenate(dists, axis=0)
 
 
@@ -71,20 +72,32 @@ if __name__ == '__main__':
         model.dump_states(Backend('XD', fname))  # save to disk
     else:
         model = model.from_backend(fname)  # read from disk
+        model.labels = ['colour', 'mag']
 
     # Here I remove the largest component (by its determinant) only because I didn't let it run long enough and that component failed to fit
     # You can remove this line to stop that happening or you can exclude components yourself using `exclude_components`
-    model = exclude_components(model, np.argmax([np.linalg.det(v) for v in model.V]))
+    largest = np.argmax([np.linalg.det(v) for v in model.V])
+    model = exclude_components(model, [largest])
     main_sequence = exclude_long_branch(exclude_wds(model))  # get the main sequence
     # if the main sequence looks bad its because the model needs longer to run
 
 
+    # plotting
     fig, ax = plt.subplots()
     h = ax.hist2d(data['bp_rp'], data['mg'], bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
-    plot_model(main_sequence, ax, 'r')  # plot the components of the model
+    plot_model(model, ax, 'r')  # plot the components of the model
     line_colours = np.linspace(0, 4, 1000)
     line_mags = conditional_2d_line(main_sequence, 'colour', line_colours)  # plot the main sequence
     ax.plot(line_colours, line_mags, 'k')
 
+    fig, ax = plt.subplots()
     line_X = np.stack([line_colours, line_mags]).T
     distances = distance_to_line(line_X, X)
+    ax.hist(distances, bins=500)
+    ax.set_xlabel('Distance to main sequence')
+
+    fig, ax = plt.subplots()
+    plt.hexbin(data['bp_rp'], data['mg'], distances, reduce_C_function=np.mean, gridsize=200)
+    plt.colorbar()
+    plt.title('Average distance to main sequence')
+    plt.show()
