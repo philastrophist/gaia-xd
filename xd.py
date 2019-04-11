@@ -1,6 +1,57 @@
 import numpy as np
+from scipy import linalg
+from tqdm import trange
+
 from candid.complete import CompleteXDGMMCompiled, Backend
 from matplotlib.patches import Ellipse
+
+
+def errors2covariance(errors):
+    covar = np.zeros((errors.shape[0], errors.shape[1], errors.shape[1]), dtype=float)
+    for i, err in enumerate(errors.T):
+        covar[:, i, i] = err ** 2
+    return covar
+
+
+def covariance2errors(covariances):
+    corr, std = zip(*[cov2corr(c, True) for c in covariances])
+    return np.asarray(corr), np.asarray(std)
+
+
+
+def log_multivariate_gaussian(x, mu, V):
+    x = np.asarray(x, dtype=float)
+    mu = np.asarray(mu, dtype=float)
+    V = np.asarray(V, dtype=float)
+
+    ndim = x.shape[-1]
+    x_mu = x - mu
+
+    if V.shape[-2:] != (ndim, ndim):
+        raise ValueError("Shape of (x-mu) and V do not match")
+
+    Vshape = V.shape
+    V = V.reshape([-1, ndim, ndim])
+
+    Vchol = np.array([linalg.cholesky(V[i], lower=True)
+                        for i in range(V.shape[0])])
+
+    # we may be more efficient by using scipy.linalg.solve_triangular
+    # with each cholesky decomposition
+    VcholI = np.array([linalg.inv(Vchol[i])
+                         for i in range(V.shape[0])])
+    logdet = np.array([2 * np.sum(np.log(np.diagonal(Vchol[i])))
+                         for i in range(V.shape[0])])
+
+    VcholI = VcholI.reshape(Vshape)
+    logdet = logdet.reshape(Vshape[:-2])
+
+    VcIx = np.sum(VcholI * x_mu.reshape(x_mu.shape[:-1]
+                                          + (1,) + x_mu.shape[-1:]), -1)
+    xVIx = np.sum(VcIx ** 2, -1)
+
+    r = -0.5 * ndim * np.log(2 * np.pi) - 0.5 * (logdet + xVIx)
+    return r
 
 
 def eigsorted(cov):
@@ -26,6 +77,19 @@ def plot_ellipse(ax, mu, covariance, color, linewidth=2, alpha=0.5):
     return e
 
 
+def logsumexp(arr, b=1, axis=None, keepdims=False):
+        # if axis is specified, roll axis to 0 so that broadcasting works below
+        if axis is not None:
+            arr = np.rollaxis(arr, axis)
+            axis = 0
+
+        # Use the max to normalize, as with the log this is what accumulates
+        # the fewest errors
+        vmax = arr.max(axis=axis)
+        out = np.log(np.sum(np.exp(arr - vmax), axis=axis, keepdims=keepdims))
+        out += vmax
+        return out
+
 def conditional_2d_line(model, xlabel, xs):
     models = [model.condition(**{xlabel: x}) for x in xs]
     _ys = [np.sum(m.mu[:, 0] * m.alpha) for m in models]
@@ -37,9 +101,39 @@ def plot_model(model, ax, color='k'):
         plot_ellipse(ax, component.mu[0], component.V[0], color, alpha=0.3)
 
 
+def _component_lnprobability(model, X, Xerr=None, norm=True):
+    if Xerr is None:
+        x, mu, V = X[:, np.newaxis, :], model.mu, model.V[np.newaxis, ...]
+        logprob = log_multivariate_gaussian(x, mu, V)
+    else:
+        Xcov = errors2covariance(Xerr)
+        x, mu, V = X[:, np.newaxis, :], model.mu, model.V[np.newaxis, ...] + Xcov[:, np.newaxis]
+        logprob = log_multivariate_gaussian(x, mu, V)
+
+    if norm:
+        component_logprob = logsumexp(logprob, axis=1)  # sum along components
+        return logprob - component_logprob[:, np.newaxis]
+    else:
+        return logprob
+
+def component_lnprobability(model, X, Xerr=None, norm=True, batch_size=5000):
+    bits = trange(0, len(X), batch_size, desc='calc component probs')
+    if Xerr is None:
+        probs = [_component_lnprobability(model, X[i:i + batch_size], norm) for i in bits]
+    else:
+        probs = [_component_lnprobability(model, X[i:i + batch_size], Xerr[i:i + batch_size], norm) for i in bits]
+    return np.concatenate(probs, axis=0)
+
+def model_lnprobability(models, X, Xerr=None, batch_size=5000):
+    model_probs = np.asarray([logsumexp(component_lnprobability(model, X, Xerr, norm=False, batch_size=batch_size),
+                                        axis=1) for model in models])
+    return model_probs - logsumexp(model_probs, axis=0)[np.newaxis, :]
+
+
+
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
-    from statsmodels.stats.moment_helpers import corr2cov
+    from statsmodels.stats.moment_helpers import corr2cov, cov2corr
 
 
     def fit(ncomponents, colours, mags, steps=1000):

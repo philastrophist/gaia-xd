@@ -5,6 +5,7 @@ from astropy.table import Table
 from matplotlib import colors
 import matplotlib.pyplot as plt
 
+import xd
 from xd import conditional_2d_line, CompleteXDGMMCompiled, plot_model, Backend, eigsorted
 
 
@@ -19,22 +20,29 @@ def exclude_components(model, components):
     new.alpha /= new.alpha.sum()
     return new
 
+def extract_submodel(model, components):
+    accepted = [c for i, c in enumerate(model.components) if i in components]
+    new = CompleteXDGMMCompiled(len(accepted), model.ndim, model.labels, model.verbose, model.prior)
+    for i, component in enumerate(accepted):
+        new.mu[i, :] = component.mu[0]
+        new.V[i, :] = component.V[0]
+        new.alpha[i] = component.alpha[0]
+    new.alpha /= new.alpha.sum()
+    return new
 
-def exclude_wds(model):
+def get_wd_components(model):
     """
     return a model without white dwarfs
     this essentially finds the bit in the corner
     """
-    rejected = [i for i, mu in enumerate(model.mu) if ((mu[0] < 1) and (mu[1] > 7.5))]
-    return exclude_components(model, rejected)
+    return [i for i, mu in enumerate(model.mu) if ((mu[0] < 1) and (mu[1] > 7.5))]
 
 
-def exclude_long_branch(model):
+def get_long_branch_components(model):
     """Attempts to remove the horizontal branch by removing the component with the bit that sticks out the most"""
     eigensorted = [eigsorted(v) for v in model.V]  # get (eigenvalues, eigenvectors)
     furthest = np.asarray([mu - (vals[0] * vects[:, 0] * 2.) for mu, (vals, vects) in zip(model.mu, eigensorted)])  # get 2sigma point along the major axis
-    reject = np.where(furthest[:, 1] < -1)[0]  # remove the component whose 2sigma ellipse extends beyond Mg = -1
-    return exclude_components(model, reject)
+    return np.where(furthest[:, 1] < -1)[0].tolist()  # remove the component whose 2sigma ellipse extends beyond Mg = -1
 
 
 def _distance_to_line(line_X, data_X):
@@ -78,11 +86,26 @@ if __name__ == '__main__':
     # You can remove this line to stop that happening or you can exclude components yourself using `exclude_components`
     largest = np.argmax([np.linalg.det(v) for v in model.V])
     model = exclude_components(model, [largest])
-    main_sequence = exclude_long_branch(exclude_wds(model))  # get the main sequence
+
+    wd_components = get_wd_components(model)
+    long_branch_components = get_long_branch_components(model)
+
+    # get each sub branch of the CMD
+    wd_model = extract_submodel(model, wd_components)
+    long_branch_model = extract_submodel(model, long_branch_components)
+    main_sequence = exclude_components(model, wd_components+long_branch_components)
     # if the main sequence looks bad its because the model needs longer to run
 
+    Xerr = np.ones_like(X) / 100.  # example fake error
 
-    # plotting
+    # calculate probability of each datapoint belonging to each model, shape = (npoints, nmodels)
+    # This takes about 10 minutes to do all the data, if it crashes, reduce the batch_size to a more manageable size
+    slc = slice(5000)
+    probs = np.exp(xd.model_lnprobability([main_sequence, long_branch_model, wd_model], X[slc], Xerr=Xerr[slc],
+                                          batch_size=5000)).T
+
+
+    #plotting
     fig, ax = plt.subplots()
     h = ax.hist2d(data['bp_rp'], data['mg'], bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
     plot_model(model, ax, 'r')  # plot the components of the model
@@ -95,6 +118,11 @@ if __name__ == '__main__':
     distances = distance_to_line(line_X, X)
     ax.hist(distances, bins=500)
     ax.set_xlabel('Distance to main sequence')
+
+    fig, ax = plt.subplots()
+    plt.hexbin(X[slc, 0], X[slc, 1], probs[:, 0], reduce_C_function=np.mean, gridsize=200)
+    plt.colorbar()
+    plt.title('Average probability of belonging to main sequence')
 
     fig, ax = plt.subplots()
     plt.hexbin(data['bp_rp'], data['mg'], distances, reduce_C_function=np.mean, gridsize=200)
