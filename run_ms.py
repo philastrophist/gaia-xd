@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--cutn', type=int, default=None)
 
     args = parser.parse_args()
-    data = Table.read(file).to_pandas()
+    data = Table.read(args.file).to_pandas()
 
     X = np.stack([data['bp_rp'].values, data['mg'].values]).T
 
