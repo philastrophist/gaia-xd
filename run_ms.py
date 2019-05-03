@@ -69,23 +69,27 @@ def distance_to_line(line_X, data_X, batch_size=10000):
 
 
 if __name__ == '__main__':
-    file = 'async_20190310174529.vot'
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument('file')
+    parser.add_argument('ncomponents', type=int)
+    parser.add_argument('tol', type=float)
+    parser.add_argument('maxiter', type=int)
+    parser.add_argument('outdir')
+    parser.add_argument('--cutn', type=int, default=None)
+
+    args = parser.parse_args()
     data = Table.read(file).to_pandas()
 
     X = np.stack([data['bp_rp'].values, data['mg'].values]).T
 
-    n_components = 13
-    tol = 1e-3
-    max_iter = 9000
-    cutn = 50000
+    fname = os.path.join(args.outdir, args.file + '-{}components-tol{}-iter{}-cut{}.h5'.format(args.ncomponents, args.tol, args.maxiter, args.cutn))
 
-    fname = file + '-{}components-tol{}-iter{}-cut{}.h5'.format(n_components, tol, max_iter, cutn)
-
-    model = CompleteXDGMMCompiled(n_components=n_components, ndim=2, labels=['colour', 'mag'], verbose=True)
+    model = CompleteXDGMMCompiled(n_components=args.ncomponents, ndim=2, labels=['colour', 'mag'], verbose=True)
     
 
     if not os.path.exists(fname):
-        model.fit(X[:cutn], max_iter=max_iter, tol=tol)  # may take 10 mins or so
+        model.fit(X[:args.cutn], max_iter=args.maxiter, tol=args.tol)  # may take 10 mins or so
         model.dump_states(Backend('XD', fname))  # save to disk
     else:
         model = model.from_backend(fname)  # read from disk
@@ -115,27 +119,33 @@ if __name__ == '__main__':
 
 
     #plotting
-    fig, ax = plt.subplots()
-    h = ax.hist2d(data['bp_rp'], data['mg'], bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
-    plot_model(model, ax, 'r')  # plot the components of the model
-    
-    line_colours = np.linspace(0, 4, 1000)
-    line_mags = conditional_2d_line(main_sequence, 'colour', line_colours)  # plot the main sequence
-    ax.plot(line_colours, line_mags, 'k')
+    from matplotlib.backends.backend_pdf import PdfPages
+    from data import plot_cmd
+    with PdfPages(os.path.join(args.outdir, 'results.pdf')) as pdf:
+        fig, ax = plt.subplots()
+        plot_cmd(data['bp_rp'], data['mg'], ax=ax)
+        plot_model(model, ax, 'r')  # plot the components of the model
+        line_colours = np.linspace(0, 4, 1000)
+        line_mags = conditional_2d_line(main_sequence, 'colour', line_colours)  # plot the main sequence
+        ax.plot(line_colours, line_mags, 'k')
+        pdf.savefig(fig)
 
-    fig, ax = plt.subplots()
-    line_X = np.stack([line_colours, line_mags]).T
-    distances = distance_to_line(line_X, X)
-    ax.hist(distances, bins=500)
-    ax.set_xlabel('Distance to main sequence')
+        fig, ax = plt.subplots()
+        line_X = np.stack([line_colours, line_mags]).T
+        distances = distance_to_line(line_X, X)
+        ax.hist(distances, bins=500)
+        ax.set_xlabel('Distance to main sequence')
+        pdf.savefig(fig)
 
-    fig, ax = plt.subplots()
-    plt.hexbin(X[slc, 0], X[slc, 1], probs[:, 0], reduce_C_function=np.mean, gridsize=200)
-    plt.colorbar()
-    plt.title('Average probability of belonging to main sequence')
+        fig, ax = plt.subplots()
+        plt.hexbin(X[slc, 0], X[slc, 1], probs[:, 0], reduce_C_function=np.mean, gridsize=200)
+        plt.colorbar()
+        plt.title('Average probability of belonging to main sequence')
+        pdf.savefig(fig)
 
-    fig, ax = plt.subplots()
-    plt.hexbin(data['bp_rp'], data['mg'], distances, reduce_C_function=np.mean, gridsize=200)
-    plt.colorbar()
-    plt.title('Average distance to main sequence')
-    plt.show()
+        fig, ax = plt.subplots()
+        plt.hexbin(data['bp_rp'], data['mg'], distances, reduce_C_function=np.mean, gridsize=200)
+        plt.colorbar()
+        plt.title('Average distance to main sequence')
+        pdf.savefig(fig)
+        

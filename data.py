@@ -33,10 +33,11 @@ def gaia_query(n, distance=200, **kwargs):
                 "1.44*greatest(1,exp(-0.4*(phot_g_mean_mag-19.5)))"
              +" and 1000/parallax <= {}".format(distance), **kwargs)
 
-def plot_cmd(colours, mags):
+def plot_cmd(colours, mags, ax=None):
     plt.rc('text', usetex=True)
 
-    fig, ax = plt.subplots(figsize=(6, 6))
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(6, 6))
     # only show 2D-histogram for bins with more than 10 stars in them
     h = ax.hist2d(colours, mags, bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
     # fill the rest with scatter (set rasterized=True if saving as vector graphics)
@@ -46,6 +47,7 @@ def plot_cmd(colours, mags):
     ax.set_xlabel(r'$G_{BP} - G_{RP}$')
     ax.set_ylabel(r'$M_G$')
     cb.set_label(r"$\mathrm{Stellar~density}$")
+    return ax
 
 
 if __name__ == '__main__':
