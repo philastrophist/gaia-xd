@@ -20,7 +20,8 @@ echo PBS: PATH = $PBS_O_PATH
 echo ------------------------------------------------------
 
 # need to have miniconda3 installed (https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)
-bash run_ms.sh
+cd code/gaia-xd
+./run_ms.sh
 
 echo ------------------------------------------------------
 echo Job ends
