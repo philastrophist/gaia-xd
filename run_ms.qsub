@@ -21,6 +21,7 @@ echo ------------------------------------------------------
 
 # need to have miniconda3 installed (https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)
 cd code/gaia-xd
+chmod +x run_ms.sh
 ./run_ms.sh
 
 echo ------------------------------------------------------
