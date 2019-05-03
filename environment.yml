@@ -10,6 +10,7 @@ dependencies:
   - bzip2=1.0.6=h14c3975_5
   - ca-certificates=2019.1.23=0
   - certifi=2019.3.9=py37_0
+  - cython=0.29.7=py37he6710b0_0
   - dbus=1.13.6=h746ee38_0
   - decorator=4.3.2=py37_0
   - defusedxml=0.5.0=py37_1
