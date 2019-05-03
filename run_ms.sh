@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+source ~/.bashrc
 ENVIRONMENT="gaia-xd"
 conda activate "$ENVIRONMENT" || ( conda env create -f environment.yml && conda activate $ENVIRONMENT && pip install -r requirements.txt)
 export MKL_THREADING_LAYER="GNU"
