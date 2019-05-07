@@ -77,6 +77,7 @@ if __name__ == '__main__':
     parser.add_argument('maxiter', type=int)
     parser.add_argument('outdir')
     parser.add_argument('--cutn', type=int, default=None)
+    parser.add_argument('--overwrite', type=bool, default=False)
 
     args = parser.parse_args()
     data = Table.read(args.file).to_pandas()
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     model = CompleteXDGMMCompiled(n_components=args.ncomponents, ndim=2, labels=['colour', 'mag'], verbose=True)
     
 
-    if not os.path.exists(fname):
+    if not os.path.exists(fname) or args.overwrite:
         model.fit(X[:args.cutn], max_iter=args.maxiter, tol=args.tol)  # may take 10 mins or so
         model.dump_states(Backend('XD', fname))  # save to disk
     else:
