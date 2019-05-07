@@ -38,6 +38,8 @@ def plot_cmd(colours, mags, ax=None):
 
     if ax is None:
         fig, ax = plt.subplots(figsize=(6, 6))
+    else:
+        fig = ax.figure
     # only show 2D-histogram for bins with more than 10 stars in them
     h = ax.hist2d(colours, mags, bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
     # fill the rest with scatter (set rasterized=True if saving as vector graphics)
