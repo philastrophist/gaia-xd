@@ -161,6 +161,6 @@ if __name__ == '__main__':
     ax = plt.gca()
     _xs = np.linspace(*ax.get_xlim())
     _ys = conditional_2d_line(model, 'colour', _xs)
-    ax.plot(_xs, _ys, color='k')
+    ax.plot(_xs, _ys, color='k', rasterized=True)
 
 

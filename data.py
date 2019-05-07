@@ -43,7 +43,7 @@ def plot_cmd(colours, mags, ax=None):
     # only show 2D-histogram for bins with more than 10 stars in them
     h = ax.hist2d(colours, mags, bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
     # fill the rest with scatter (set rasterized=True if saving as vector graphics)
-    ax.scatter(colours, mags, alpha=0.05, s=1, color='k', zorder=0)
+    ax.scatter(colours, mags, alpha=0.05, s=1, color='k', zorder=0, rasterized=True)
     ax.invert_yaxis()
     cb = fig.colorbar(h[3], ax=ax, pad=0.02)
     ax.set_xlabel(r'$G_{BP} - G_{RP}$')

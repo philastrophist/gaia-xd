@@ -128,7 +128,7 @@ if __name__ == '__main__':
         plot_model(model, ax, 'r')  # plot the components of the model
         line_colours = np.linspace(0, 4, 1000)
         line_mags = conditional_2d_line(main_sequence, 'colour', line_colours)  # plot the main sequence
-        ax.plot(line_colours, line_mags, 'k')
+        ax.plot(line_colours, line_mags, 'k', rasterized=True)
         pdf.savefig(fig)
 
         fig, ax = plt.subplots()
