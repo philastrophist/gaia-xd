@@ -84,7 +84,8 @@ if __name__ == '__main__':
 
     X = np.stack([data['bp_rp'].values, data['mg'].values]).T
 
-    fname = os.path.join(args.outdir, args.file + '-{}components-tol{}-iter{}-cut{}.h5'.format(args.ncomponents, args.tol, args.maxiter, args.cutn))
+    prefix = os.path.join(args.outdir, '{}-{}components-tol{}-iter{}-cut{}'.format(args.file, args.ncomponents, args.tol, args.maxiter, args.cutn))
+    fname = prefix+'.h5'
 
     model = CompleteXDGMMCompiled(n_components=args.ncomponents, ndim=2, labels=['colour', 'mag'], verbose=True)
     
@@ -122,7 +123,7 @@ if __name__ == '__main__':
     #plotting
     from matplotlib.backends.backend_pdf import PdfPages
     from data import plot_cmd
-    with PdfPages(os.path.join(args.outdir, 'results.pdf')) as pdf:
+    with PdfPages(prefix+'-plot.pdf') as pdf:
         fig, ax = plt.subplots()
         plot_cmd(data['bp_rp'], data['mg'], ax=ax)
         plot_model(model, ax, 'r')  # plot the components of the model
