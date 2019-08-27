@@ -1,0 +1,1279 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"spectr",
+				"spectroscopic"
+			],
+			[
+				"foo",
+				"footnote\ttex"
+			],
+			[
+				"for",
+				"forin\tfor … in … done"
+			],
+			[
+				"there",
+				"therein"
+			],
+			[
+				"refer",
+				"references\t(main.tex)"
+			],
+			[
+				"signa",
+				"signal-to-noise"
+			],
+			[
+				"anal",
+				"analysis"
+			],
+			[
+				"accur",
+				"accurate\t(Chapter1.tex)"
+			],
+			[
+				"imput",
+				"imputation"
+			],
+			[
+				"cap",
+				"capabilities"
+			],
+			[
+				"Astro",
+				"Astrophysical"
+			],
+			[
+				"norn",
+				"normalisation"
+			],
+			[
+				"Star",
+				"Star-formation"
+			],
+			[
+				"lum",
+				"luminosity"
+			],
+			[
+				"qui",
+				"quickly"
+			],
+			[
+				"exist",
+				"existence"
+			],
+			[
+				"extra",
+				"extrapolating"
+			],
+			[
+				"lumin",
+				"luminous\t(Chapter6.tex)"
+			],
+			[
+				"birght",
+				"brighter"
+			],
+			[
+				"fou",
+				"foundation"
+			],
+			[
+				"advan",
+				"advantages\t(Chapter6.tex)"
+			],
+			[
+				"indicat",
+				"indicator\t(Chapter6.tex)"
+			],
+			[
+				"prev",
+				"previously"
+			],
+			[
+				"conver",
+				"convergence"
+			],
+			[
+				"origin",
+				"original\t(Chapter3.tex)"
+			],
+			[
+				"likel",
+				"likelihood"
+			],
+			[
+				"boot",
+				"bootstrapping"
+			],
+			[
+				"attrib",
+				"attribute\t(Chapter6.tex)"
+			],
+			[
+				"sign",
+				"significantly\t(Chapter6.tex)"
+			],
+			[
+				"black",
+				"black-hole"
+			],
+			[
+				"effec",
+				"effect"
+			],
+			[
+				"broa",
+				"broadening\t(Chapter6.tex)"
+			],
+			[
+				"How",
+				"However"
+			],
+			[
+				"simu",
+				"simulated"
+			],
+			[
+				"varia",
+				"variability"
+			],
+			[
+				"Low",
+				"low-redshift"
+			],
+			[
+				"maxi",
+				"maximised\t(Chapter6.tex)"
+			],
+			[
+				"obser",
+				"observations"
+			],
+			[
+				"resis",
+				"resistant\t(Chapter2.tex)"
+			],
+			[
+				"star-",
+				"star-formation"
+			],
+			[
+				"stellar",
+				"stellar-mass\t(Chapter6.tex)"
+			],
+			[
+				"ident",
+				"identify\t(Chapter3.tex)"
+			],
+			[
+				"behv",
+				"behaviour\t(Chapter2.tex)"
+			],
+			[
+				"discr",
+				"discrepancy"
+			],
+			[
+				"uncer",
+				"uncertainties"
+			],
+			[
+				"bora",
+				"broadening"
+			],
+			[
+				"borad",
+				"broad"
+			],
+			[
+				"star-f",
+				"star-formation"
+			],
+			[
+				"boo",
+				"bootstrapping"
+			],
+			[
+				"post",
+				"posterior"
+			],
+			[
+				"constr",
+				"constructed"
+			],
+			[
+				"max",
+				"maximising"
+			],
+			[
+				"effe",
+				"effect"
+			],
+			[
+				"compon",
+				"components"
+			],
+			[
+				"signf",
+				"significantly"
+			],
+			[
+				"signi",
+				"significant\t(Chapter3.tex)"
+			],
+			[
+				"includ",
+				"includegraphics[options]{name}\tlatex-document"
+			],
+			[
+				"confie",
+				"confidence"
+			],
+			[
+				"comp",
+				"components"
+			],
+			[
+				"alo",
+				"algorithm"
+			],
+			[
+				"deriv",
+				"derivation"
+			],
+			[
+				"log",
+				"log-likelihood"
+			],
+			[
+				"expect",
+				"expectation"
+			],
+			[
+				"prop",
+				"properties"
+			],
+			[
+				"covari",
+				"covariance"
+			],
+			[
+				"component",
+				"component's"
+			],
+			[
+				"norm",
+				"normalises"
+			],
+			[
+				"esat",
+				"estimate"
+			],
+			[
+				"class",
+				"classification"
+			],
+			[
+				"emiss",
+				"emission"
+			],
+			[
+				"cre",
+				"criteria"
+			],
+			[
+				"optical",
+				"optically"
+			],
+			[
+				"opit",
+				"optically"
+			],
+			[
+				"depend",
+				"dependent\t(Chapter3.tex)"
+			],
+			[
+				"quan",
+				"quantities"
+			],
+			[
+				"brig",
+				"brighter"
+			],
+			[
+				"gr",
+				"gtrsim\tamssymb"
+			],
+			[
+				"depe",
+				"dependency"
+			],
+			[
+				"expecti",
+				"expectation\t(Chapter6.tex)"
+			],
+			[
+				"simpl",
+				"simplify\t(Chapter6.tex)"
+			],
+			[
+				"equ",
+				"equivalent\t(Chapter2.tex)"
+			],
+			[
+				"stati",
+				"statistic\t(Chapter2.tex)"
+			],
+			[
+				"start",
+				"star-formation"
+			],
+			[
+				"gener",
+				"generation\t(Chapter2.tex)"
+			],
+			[
+				"general",
+				"generalised\t(Abstract.tex)"
+			],
+			[
+				"analy",
+				"analytically\t(Chapter6.tex)"
+			],
+			[
+				"quant",
+				"quantified"
+			],
+			[
+				"multi",
+				"multi-dimensional\t(Chapter6.tex)"
+			],
+			[
+				"quanti",
+				"quantifying\t(Chapter2.tex)"
+			],
+			[
+				"SDSS",
+				"SDSS-RM\t(Abstract.tex)"
+			],
+			[
+				"metho",
+				"methodology"
+			],
+			[
+				"obs",
+				"observations"
+			],
+			[
+				"ligh",
+				"light-curve"
+			],
+			[
+				"corre",
+				"corresponds\t(Chapter2.tex)"
+			],
+			[
+				"obse",
+				"observed"
+			],
+			[
+				"cla",
+				"classifications"
+			],
+			[
+				"exh",
+				"exhibit"
+			],
+			[
+				"star",
+				"star-formation"
+			],
+			[
+				"star-foi",
+				"star-formation"
+			],
+			[
+				"star-for",
+				"star-formation"
+			],
+			[
+				"invest",
+				"investigated"
+			],
+			[
+				"Pac",
+				"PackageInfo{text}\tlatex-dev"
+			],
+			[
+				"low",
+				"low-luminosity"
+			],
+			[
+				"the",
+				"thesis"
+			],
+			[
+				"esit",
+				"estimations"
+			],
+			[
+				"depen",
+				"dependency"
+			],
+			[
+				"freq",
+				"frequency"
+			],
+			[
+				"dist",
+				"distant"
+			],
+			[
+				"vari",
+				"variables"
+			],
+			[
+				"classi",
+				"classification"
+			],
+			[
+				"sub",
+				"subequations"
+			],
+			[
+				"osber",
+				"observations"
+			],
+			[
+				"vair",
+				"variability"
+			],
+			[
+				"Cahpt",
+				"Chapter3"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"pRoce",
+				"Process"
+			],
+			[
+				"tehc",
+				"technique"
+			],
+			[
+				"Fu",
+				"Furthermore"
+			],
+			[
+				"lower",
+				"lower-redshift"
+			],
+			[
+				"red",
+				"redshift"
+			],
+			[
+				"R",
+				"RM"
+			],
+			[
+				"typ",
+				"type-II"
+			],
+			[
+				"star-fo",
+				"star-formation"
+			],
+			[
+				"incoro",
+				"incorporate"
+			],
+			[
+				"bin",
+				"binomial"
+			],
+			[
+				"obsere",
+				"observed"
+			],
+			[
+				"intr",
+				"intrinsic"
+			],
+			[
+				"signif",
+				"significance"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			],
+			[
+				"open",
+				"LaTeXing: Open PDF"
+			],
+			[
+				"clean",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"synch",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"sync",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"]",
+				"Snippet: Display Math — \\[ … \\]"
+			],
+			[
+				"snippet tab",
+				"Snippet: New table"
+			],
+			[
+				"table",
+				"Snippet: Table"
+			],
+			[
+				"repos",
+				"Package Control: Add Repository"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Repository"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pdf",
+				"LaTeXing: Jump To PDF"
+			],
+			[
+				"ltexing",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"impo",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"import",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"task",
+				"Tasks: New"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"CLEAN",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"buil",
+				"Build: Custom Quick Build"
+			],
+			[
+				"bui",
+				"Build: Custom Quick Build"
+			],
+			[
+				"imp",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"notes",
+				"Notes: New…"
+			],
+			[
+				"symbol",
+				"LaTeXing: Lookup TeX Symbol"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"latexing",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"cancel",
+				"Build: Cancel"
+			],
+			[
+				"got to",
+				"LaTeXing: Texcount"
+			],
+			[
+				"impor",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"clea",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"cle",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"im",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"citation",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"celan",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"citat",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"look",
+				"LaTeXing: Lookup TeX Symbol"
+			],
+			[
+				"build",
+				"Build: Custom Quick Build"
+			],
+			[
+				"ope",
+				"LaTeXing: Open PDF"
+			],
+			[
+				"op",
+				"LaTeXing: Open PDF"
+			],
+			[
+				"git mer",
+				"Git: Merge"
+			],
+			[
+				"jump",
+				"LaTeXing: Jump To PDF"
+			],
+			[
+				"jum",
+				"LaTeXing: Jump To PDF"
+			],
+			[
+				"report",
+				"SublimeLinter: Report (Open Files)"
+			],
+			[
+				"git",
+				"Git: Diff"
+			],
+			[
+				"linter",
+				"SublimeLinter: Report (Open Files)"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"offline",
+				"LaTeXing: Toggle Offline Mode"
+			],
+			[
+				"inmpo",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"prefre",
+				"Preferences: Settings"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"synchr",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"s",
+				"Snippet: Paragraph"
+			],
+			[
+				"latexing citat",
+				"LaTeXing: Synchronise Remote Data"
+			],
+			[
+				"update",
+				"TeX Live Package Manager: Update Packages"
+			],
+			[
+				"clear",
+				"LaTeXing: Clean Temporary Output Dictionary"
+			],
+			[
+				"hint",
+				"Sourcegraph: Define Current Symbol"
+			],
+			[
+				"instalk",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 614.0
+	},
+	"console":
+	{
+		"height": 322.0,
+		"history":
+		[
+			"view.run_command(\"example\")",
+			"ExampleCommand",
+			"view.settings().get('syntax')",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/gboff/PycharmProjects/gaia-xd",
+		"/C/Users/gboff/PycharmProjects/gaia-xd/candid"
+	],
+	"file_history":
+	[
+		"/P/archive/TheFIRC4/qTIR for galaxies with WISE data.ipynb",
+		"/C/Users/gboff/PycharmProjects/gaia-xd/data.py",
+		"/C/Users/gboff/PycharmProjects/gaia-xd/requirements.txt",
+		"/C/Users/gboff/AppData/Roaming/Sublime Text 3/Packages/TabNine/Preferences.sublime-settings",
+		"/C/Users/gboff/AppData/Roaming/Sublime Text 3/Packages/TabNine/TabNine.sublime-settings",
+		"/C/Users/gboff/PycharmProjects/gaia-xd/run_ms.py",
+		"/C/Users/gboff/AppData/Roaming/Sublime Text 3/Packages/TabNine/Main.sublime-menu",
+		"/C/Users/gboff/AppData/Roaming/Sublime Text 3/Packages/TabNine/README.md",
+		"/G/Dropbox/latex/Thesis/Chapters/Chapter3.tex",
+		"/G/Dropbox/latex/Thesis/ammendments_performed.todo",
+		"/P/archive/photometric_RM/data/raw/proposed_sources.ascii",
+		"/G/Dropbox/latex/Thesis/Remote.bib",
+		"/G/Dropbox/latex/Thesis/Chapters/Chapter2.tex",
+		"/G/Dropbox/latex/Thesis/Chapters/Chapter1.tex",
+		"/G/Dropbox/latex/Thesis/main.tex",
+		"/G/Dropbox/latex/Thesis/commands.tex",
+		"/G/Dropbox/latex/Thesis/Chapters/Chapter6.tex",
+		"/G/Dropbox/latex/Thesis/Appendices/AppendixC.tex",
+		"/G/Dropbox/latex/Thesis/diff.sh",
+		"/G/Dropbox/latex/Thesis/Appendices/AppendixA.tex",
+		"/G/Dropbox/latex/Thesis/styles/thesisbib.bst",
+		"/G/Dropbox/latex/Thesis/Abstract.tex",
+		"/G/Dropbox/latex/Thesis/Acknowledgements.tex",
+		"/G/Dropbox/latex/Thesis/Thesis.cls",
+		"/G/Dropbox/latex/Thesis/Chapters/Chapter7.tex",
+		"/G/Dropbox/latex/Thesis/Appendices/AppendixB.tex",
+		"/G/Dropbox/latex/Thesis/main.bbl",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/diff.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/acronyms.txt",
+		"/local/home/sread/Dropbox/latex/thesis/Acronyms.tex",
+		"/local/home/sread/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter2.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/RM/numbers.tex",
+		"/local/home/sread/Dropbox/latex/thesis/commands.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter3.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter6.tex",
+		"/local/home/sread/Dropbox/latex/thesis/aas_macros.sty",
+		"/local/home/sread/Dropbox/latex/thesis/styles/thesisbib.bst",
+		"/local/home/sread/Dropbox/latex/thesis/Acknowledgements.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/hetdex_plan.todo",
+		"/local/home/sread/Dropbox/latex/thesis/clean_bib.py",
+		"/local/home/sread/Dropbox/latex/thesis/Remote.bib",
+		"/local/home/sread/Dropbox/latex/thesis/main.bbl",
+		"/local/home/sread/Dropbox/latex/thesis/thesis2.todo",
+		"/local/home/sread/Dropbox/latex/thesis/thesis.todo",
+		"/local/home/sread/Dropbox/latex/thesis/track.py",
+		"/local/home/sread/Dropbox/latex/thesis/main.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter7.tex",
+		"/home/sread/.bashrc",
+		"/local/home/sread/Dropbox/bash_vars/texing.sh",
+		"/local/home/sread/Dropbox/bayesian/bayesian/estimation.py",
+		"/local/home/sread/Dropbox/bayesian/bayesian/estimation.pyc",
+		"/local/home/sread/Dropbox/latex/thesis/.stats/Pages.png",
+		"/local/home/sread/.config/sublime-text-3/Packages/All Autocomplete/All Autocomplete.sublime-settings",
+		"/local/home/sread/.config/sublime-text-3/Packages/User/All Autocomplete.sublime-settings",
+		"/local/home/sread/Dropbox/latex/thesis/Acknowledgements.aux",
+		"/local/home/sread/Dropbox/latex/thesis/Appendices/AppendixB.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Thesis.cls",
+		"/local/home/sread/Dropbox/latex/FIRC_at_low_frequency/main.tex",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/main.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Appendices/AppendixC.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Appendices/AppendixB.log",
+		"/local/home/sread/Dropbox/latex/thesis/Appendices/AppendixC.log",
+		"/local/home/sread/Dropbox/latex/thesis/main.aux",
+		"/local/home/sread/Dropbox/latex/thesis/main.log",
+		"/local/home/sread/Apps/texlive/2015/texmf-dist/tex/latex/was/gensymb.sty",
+		"/local/home/sread/Dropbox/latex/thesis/Abstract.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter1.tex",
+		"/local/home/sread/Dropbox/latex/thesis/readme.md",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter5.tex",
+		"/local/home/sread/Dropbox/scripts/code-review.sh/bash-preexec.sh",
+		"/local/home/sread/Dropbox/scripts/code-review.sh/code-review.sh",
+		"/local/home/sread/Dropbox/hetdex/pygmmis_config.py",
+		"/local/home/sread/Dropbox/hetdex/utilities.py",
+		"/local/home/sread/Dropbox/latex/thesis/.bits/main.bbl",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/RM/target_table.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Figures/hetdex/snII-L150-mass.pdf",
+		"/local/home/sread/Dropbox/latex/thesis/Figures/hetdex/snIa-L150-mass.pdf",
+		"/local/home/sread/Dropbox/latex/thesis/Figures/hetdex/sne-fraction-mass.pdf",
+		"/local/home/sread/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
+		"/local/home/sread/Dropbox/hetdex/run_pygmmis_full.py",
+		"/local/home/sread/Dropbox/hetdex/run_test_pygmmis.py",
+		"/home/sread/Downloads/lofar_sfr.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/RM/target10_simulation_ranges.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/RM/fit_table.tex",
+		"/local/home/sread/Dropbox/latex/thesis/compile",
+		"/local/home/sread/Dropbox/latex/thesis/.bits/main.log",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/target_table.tex",
+		"/home/sread/.synctex/evince_forward_search",
+		"/home/sread/.synctex/evince_backward_search",
+		"/home/sread/.synctex/evince",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter4.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter34.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/diff34.tex.diff",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/RM/mass_fit_table.tex",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/mass_fit_table.tex",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/target10_simulation_ranges.tex",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/intro_plan.txt",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter1old.tex",
+		"/local/home/sread/Dropbox/latex/thesis/commit-msg",
+		"/local/home/sread/Dropbox/scripts/adsabs.py",
+		"/P/latex/thesis/thesis.todo",
+		"/local/home/sread/Dropbox/bash_vars/project.sh",
+		"/local/home/sread/Dropbox/bash_vars/herts.sh",
+		"/local/home/sread/Dropbox/latex/thesis/Bibliography.bib",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/Chapter1 (conflicted).tex",
+		"/local/home/sread/Dropbox/latex/thesis/Figures/intro/tacchella_main_sequence.pdf",
+		"/home/sread/Dropbox/scripts/adsabs.py",
+		"/run/user/1302/gvfs/archive:host=file%253A%252F%252F%252Fhome%252Fsread%252FDownloads%252F0506044/xxx.tex",
+		"/local/home/sread/Dropbox/journal_club/journal_club/sound.py",
+		"/local/home/sread/Dropbox/journal_club/journal_club/jc_algorithm.py",
+		"/local/home/sread/Dropbox/latex/PhD Review Report/Chapters/Introduction.tex",
+		"/local/home/sread/Dropbox/latex/PhD Review Report/main.tex",
+		"/local/home/sread/Dropbox/latex/progress_report/main.tex",
+		"/local/home/sread/Dropbox/Code-Review/Task 14/run.py",
+		"/local/home/sread/Dropbox/Code-Review/Task 14/solution.py",
+		"/local/home/sread/Dropbox/Code-Review/Task 14/Readme.md",
+		"/local/home/sread/Dropbox/Code-Review/Task 14/output_files.py",
+		"/local/home/sread/Dropbox/Code-Review/Task 13/Readme.md",
+		"/local/home/sread/Dropbox/Code-Review/Task 12/README.md",
+		"/local/home/sread/Dropbox/Code-Review/Task 14/data/air-temp-1980-09-16T12:00:00.000000000.csv",
+		"/local/home/sread/Dropbox/latex/thesis/pre-commit",
+		"/local/home/sread/Dropbox/latex/thesis/Chapters/diff.tex",
+		"/local/home/sread/Dropbox/latex/hetdex/main.tex",
+		"/local/home/sread/Dropbox/latex/FIRC_at_low_frequency/mnras.bst",
+		"/local/home/sread/Dropbox/latex/FIRC_at_low_frequency/mnras.cls",
+		"/local/home/sread/Dropbox/latex/thesis/main.lof",
+		"/local/home/sread/Dropbox/latex/reverberation_mapping/fit_table.tex"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 182.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "gaia-xd.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"appen",
+				"Appendices/AppendixB.tex"
+			],
+			[
+				"appendixC.t",
+				"Appendices/AppendixC.tex"
+			],
+			[
+				"append",
+				"Appendices/AppendixA.tex"
+			],
+			[
+				"chapter",
+				"Chapters/Chapter7.tex"
+			],
+			[
+				"ackn",
+				"Acknowledgements.tex"
+			],
+			[
+				"abstr",
+				"Abstract.tex"
+			],
+			[
+				"cha",
+				"Chapters/Chapter1.tex"
+			],
+			[
+				"appendixB",
+				"Appendices/AppendixB.tex"
+			],
+			[
+				"comman",
+				"commands.tex"
+			],
+			[
+				"acro",
+				"Chapters/acronyms.txt"
+			],
+			[
+				"acr",
+				"Acronyms.tex"
+			],
+			[
+				"bbl",
+				"main.bbl"
+			],
+			[
+				"remote",
+				"Remote.bib"
+			],
+			[
+				"",
+				"Chapters/Chapter7.tex"
+			],
+			[
+				"ab",
+				"Abstract.tex"
+			],
+			[
+				"track",
+				"track.py"
+			],
+			[
+				"chapte",
+				"Chapters/Chapter3.tex"
+			],
+			[
+				"main.tex",
+				"main.tex"
+			],
+			[
+				"abs",
+				"Abstract.tex"
+			],
+			[
+				"ao",
+				"Acknowledgements.tex"
+			],
+			[
+				"ack",
+				"Acknowledgements.aux"
+			],
+			[
+				"commands",
+				"commands.tex"
+			],
+			[
+				"number",
+				"Chapters/RM/numbers.tex"
+			],
+			[
+				"chap",
+				"Chapters/Chapter2.tex"
+			],
+			[
+				"appendixB.t",
+				"Appendices/AppendixB.tex"
+			],
+			[
+				"main",
+				"main.tex"
+			],
+			[
+				"ch",
+				"Chapters/Chapter1.tex"
+			],
+			[
+				"command",
+				"commands.tex"
+			],
+			[
+				"com",
+				"compile"
+			],
+			[
+				"bib",
+				"Remote.bib"
+			],
+			[
+				"diff",
+				"Chapters/diff.tex"
+			],
+			[
+				"chapter6",
+				"Chapters/Chapter6.tex"
+			],
+			[
+				"Chape",
+				"Chapters/Chapter6.tex"
+			],
+			[
+				"num",
+				"numbers.tex"
+			],
+			[
+				"tab",
+				"target_table.tex"
+			],
+			[
+				"nu",
+				"numbers.tex"
+			],
+			[
+				"targ",
+				"target_table.tex"
+			],
+			[
+				"tar",
+				"target_table.tex"
+			],
+			[
+				"mas",
+				"mass_fit_table.tex"
+			],
+			[
+				"mass",
+				"mass_fit_table.tex"
+			],
+			[
+				"fit",
+				"fit_table.tex"
+			],
+			[
+				"range",
+				"target10_simulation_ranges.tex"
+			],
+			[
+				"log",
+				"main.log"
+			],
+			[
+				"stor",
+				"Story"
+			],
+			[
+				"so",
+				"Story"
+			],
+			[
+				"sotr",
+				"Story"
+			],
+			[
+				"sot",
+				"Story"
+			],
+			[
+				"s",
+				"Story"
+			],
+			[
+				"sto",
+				"Story"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 1000.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\gboff\\Dropbox\\latex\\Dan\\dan.sublime-project"
+			]
+		],
+		"width": 760.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"fss_on_distraction_free": false,
+		"fss_on_full_screen": false
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
